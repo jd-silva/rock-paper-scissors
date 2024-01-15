@@ -17,6 +17,12 @@ function getComputerChoice() {
 
 function playGame(playerChoice, computerChoice) {
 
+
+        let playerChoice = prompt("Enter rock, paper or scissors");
+        if(["rock", "paper", "scissors"].includes(playerChoice.toLowerCase())) {
+
+    
+    let computerChoice= getComputerChoice();
     let playerChoiceLower = playerChoice.toLowerCase();
     let computerChoiceLower = computerChoice.toLowerCase();
 
@@ -33,8 +39,14 @@ function playGame(playerChoice, computerChoice) {
     } else if (playerChoiceLower === "scissors" && computerChoiceLower === "rock") {
         return "You lose! Rock beats scissors.";
     } else if (playerChoiceLower === computerChoiceLower) {
-        return "Its a draw!";
+        console.log("It's a draw! Play again.");
+    } 
+} else {
+    alert ("Invalid choice. Enter rock, paper or scissors.");
+    continue;
     }
+
+
 }
 
-console.log(playGame("ROCK", "Paper"));
+playGame();
